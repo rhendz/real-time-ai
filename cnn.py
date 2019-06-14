@@ -40,35 +40,37 @@ classifier.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = [
 
 # Fits the CNN to the images
 train_datagen = ImageDataGenerator(
-    rescale=1./255,
-    shear_range=0.2,
-    zoom_range=0.2,
-    horizontal_flip=True
-)
+        rescale=1./255,
+        shear_range=0.2,
+        zoom_range=0.2,
+        horizontal_flip=True
+        )
 
 test_datagen = ImageDataGenerator(rescale=1./255)
 
 training_set = train_datagen.flow_from_directory(
-    'dataset/training_set',
-    target_size=(64, 64),
-    batch_size=32,
-    class_mode='binary'
-)
+        'dataset/training_set',
+        target_size=(64, 64),
+        batch_size=32,
+        class_mode='binary'
+        )
 
 test_set = test_datagen.flow_from_directory(
-    'dataset/test_set',
-    target_size=(64, 64),
-    batch_size=32,
-    class_mode='binary'
-)
+        'dataset/test_set',
+        target_size=(64, 64),
+        batch_size=32,
+        class_mode='binary'
+        )
 
 checkpointer=ModelCheckpoint('tmp/weights-{epoch:02d}.h5', verbose=1, save_best_only=True)
 
 classifier.fit_generator(
-    training_set,
-    steps_per_epoch=8000,
-    epochs=5,
-    validation_data=test_set,
-    validation_steps=800,
-    callbacks=[checkpointer]
-)
+        training_set,
+        steps_per_epoch=8000,
+        epochs=5,
+        validation_data=test_set,
+        validation_steps=800,
+        use_multiprocessing=True,
+        workers=24,
+        callbacks=[checkpointer]
+        )
