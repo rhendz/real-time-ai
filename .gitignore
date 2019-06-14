@@ -4,3 +4,4 @@
 *.tar.gz
 !jobs
 !saved_models
+!images
