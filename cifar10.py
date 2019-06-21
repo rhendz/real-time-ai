@@ -14,7 +14,7 @@ epochs = 1
 data_augmentation = False
 num_predictions = 20
 save_dir = os.path.join(os.getcwd(), 'saved_models')
-model_name = 'keras_cifar2_cd_model.h5'
+model_name = 'keras_cifar2_four_afht_model.h5'
 
 # The data, split between train and test sets:
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
@@ -27,7 +27,7 @@ yl_test = y_test.tolist()
 # Training for certain classes
 cnt = 0
 for idx, i in enumerate(list(yl_train)):
-    if (i[0] != 3 and i[0] != 5 and i[0] != 2 and i[0] != 6): # Set for cats and dogs
+    if (i[0] != 0 and i[0] != 6 and i[0] != 7 and i[0] != 9): # Set for cats and dogs
         yl_train.remove(i)
         xl_train.pop(cnt)
     else:
@@ -35,7 +35,7 @@ for idx, i in enumerate(list(yl_train)):
 
 cnt = 0
 for idx, i in enumerate(list(yl_test)):
-    if (i[0] != 3 and i[0] != 5 and i[0] != 2 and i[0] != 6): # Set for cats and dogs
+    if (i[0] != 0 and i[0] != 6 and i[0] != 7 and i[0] != 9): # Set for cats and dogs
         yl_test.remove(i)
         xl_test.pop(cnt)
     else:
