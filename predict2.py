@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 # Data information
 total_images = 2000 # NOT USED
 num_classes = 10
-model = load_model('saved_models/keras_cifar4_four_model.h5')
+model = load_model('saved_models/keras_cifar2_four_afht_model.h5')
 
 # Gaussian blur settings
 std_dev = 0
@@ -32,7 +32,7 @@ yl_test = y_test.tolist()
 
 cnt = 0
 for idx, i in enumerate(list(yl_test)):
-    if (i[0] != 2 and i[0] != 6 and i[0] != 3 and i[0] != 5): # Set for 4
+    if (i[0] != 0 and i[0] != 6 and i[0] != 7 and i[0] != 9): # Set for 4
         yl_test.remove(i)
         xl_test.pop(cnt)
     else:
@@ -60,4 +60,4 @@ df = pd.DataFrame({'x': std_dev_arr, 'y': accuracy_arr})
 plt.plot('x', 'y', data=df, linestyle='', marker='o')
 plt.xlabel('Gaussian Blur Standard Deviation')
 plt.ylabel('Accuracy Percentage')
-plt.savefig('images/gauss-four.jpg')
+plt.savefig('images/gauss-four-afht.jpg')
