@@ -27,7 +27,7 @@ yl_test = y_test.tolist()
 # Training for certain classes
 cnt = 0
 for idx, i in enumerate(list(yl_train)):
-    if (i[0] != 3 and i[0] != 5): # Set for cats and dogs
+    if (i[0] != 3 and i[0] != 5 and i[0] != 2 and i[0] != 6): # Set for cats and dogs
         yl_train.remove(i)
         xl_train.pop(cnt)
     else:
@@ -35,7 +35,7 @@ for idx, i in enumerate(list(yl_train)):
 
 cnt = 0
 for idx, i in enumerate(list(yl_test)):
-    if (i[0] != 3 and i[0] != 5): # Set for cats and dogs
+    if (i[0] != 3 and i[0] != 5 and i[0] != 2 and i[0] != 6): # Set for cats and dogs
         yl_test.remove(i)
         xl_test.pop(cnt)
     else:

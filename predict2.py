@@ -10,7 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Data information
-total_images = 2000
+total_images = 2000 # NOT USED
 num_classes = 10
 model = load_model('saved_models/keras_cifar4_four_model.h5')
 
