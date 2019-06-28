@@ -8,6 +8,7 @@ from scipy.ndimage.filters import gaussian_filter
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import stl10_input
 
 # Data information
 total_images = 2000 # NOT USED
@@ -24,7 +25,7 @@ std_dev_arr = []
 accuracy_arr = []
 
 # The data, split between train and test sets:
-(x_train, y_train), (x_test, y_test) = cifar10.load_data()
+(x_train, y_train), (x_test, y_test) = stl10_input.load_data()
 
 # Filters unwanted unwanted images
 xl_test = x_test.tolist()
@@ -57,7 +58,10 @@ for x in np.arange(std_dev, std_dev_max+std_dev_delta, std_dev_delta):
     accuracy_arr.append(scores[1]) # Adds accuracy
 
 df = pd.DataFrame({'x': std_dev_arr, 'y': accuracy_arr})
+plt.title('ACDT-96: Gaussian Blur vs Accuracy')
 plt.plot('x', 'y', data=df, linestyle='', marker='o')
+plt.gca().set_xlim(left=0, right=3)
+plt.gca().set_ylim(bottom=0, top=1)
 plt.xlabel('Gaussian Blur Standard Deviation')
 plt.ylabel('Accuracy Percentage')
-plt.savefig('images/gauss-four-afht.jpg')
+plt.savefig('images/gauss_stl10_acdt_graph.jpg')

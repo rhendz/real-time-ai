@@ -9,6 +9,6 @@
 
 echo Running on $SLURM_JOB_NUM_NODES nodes
 date
-srun python3 predictcifar10.py
+srun python3 predictstl10.py
 date
 

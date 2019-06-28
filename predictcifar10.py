@@ -32,7 +32,7 @@ yl_test = y_test.tolist()
 
 cnt = 0
 for idx, i in enumerate(list(yl_test)):
-    if (i[0] != 0 and i[0] != 6 and i[0] != 7 and i[0] != 9): # Set for 4
+    if (i[0] != 0 and i[0] != 3 and i[0] != 4 and i[0] != 9): # Set for 4
         yl_test.remove(i)
         xl_test.pop(cnt)
     else:
@@ -57,10 +57,10 @@ for x in np.arange(std_dev, std_dev_max+std_dev_delta, std_dev_delta):
     accuracy_arr.append(scores[1]) # Adds accuracy
 
 df = pd.DataFrame({'x': std_dev_arr, 'y': accuracy_arr})
-plt.title('test')
+plt.title('ACDT: Gaussian Blur vs Accuracy')
 plt.plot('x', 'y', data=df, linestyle='', marker='o')
-plt.gca().set_xlim(left=0)
-plt.gca().set_ylim(bottom=0)
+plt.gca().set_xlim(left=0, right=3)
+plt.gca().set_ylim(bottom=0, top=1)
 plt.xlabel('Gaussian Blur Standard Deviation')
 plt.ylabel('Accuracy Percentage')
 plt.savefig('images/gauss_cifar10_acdt_graph.jpg')
