@@ -12,7 +12,7 @@ import stl10_input
 
 batch_size = 32
 num_classes = 10
-epochs = 1
+epochs = 100
 data_augmentation = False
 num_predictions = 20
 save_dir = os.path.join(os.getcwd(), 'saved_models')

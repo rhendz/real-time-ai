@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name rai
+#SBATCH --job-name rai-stl
 #SBATCH -N 1
 #SBATCH -o jobs/rai/rai.out.%A
 #SBATCH -e jobs/rai/rai.err.%A
@@ -9,6 +9,6 @@
 
 echo Running on $SLURM_JOB_NUM_NODES nodes
 date
-srun python3 cifar10.py
+srun python3 predictcifar10.py
 date
 

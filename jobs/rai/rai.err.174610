@@ -1,0 +1,3 @@
+Using TensorFlow backend.
+predictcifar10.py:61: RuntimeWarning: Second argument 'y' is ambiguous: could be a color spec but is in data; using as data.  Either rename the entry in data or use three arguments to plot.
+  plt.plot('x', 'y', data=df, linestyle='', marker='o')

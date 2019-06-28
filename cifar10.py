@@ -10,11 +10,11 @@ import os
 
 batch_size = 32
 num_classes = 10
-epochs = 1
+epochs = 100
 data_augmentation = False
 num_predictions = 20
 save_dir = os.path.join(os.getcwd(), 'saved_models')
-model_name = 'keras_cifar2_four_afht_model.h5'
+model_name = 'keras_cifar10_afht_model.h5'
 
 # The data, split between train and test sets:
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
