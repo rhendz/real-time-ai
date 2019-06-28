@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 # Data information
 total_images = 2000 # NOT USED
 num_classes = 10
-model = load_model('saved_models/keras_cifar2_four_afht_model.h5')
+model = load_model('saved_models/keras_cifar10_acdt_model.h5')
 
 # Gaussian blur settings
 std_dev = 0
@@ -57,7 +57,10 @@ for x in np.arange(std_dev, std_dev_max+std_dev_delta, std_dev_delta):
     accuracy_arr.append(scores[1]) # Adds accuracy
 
 df = pd.DataFrame({'x': std_dev_arr, 'y': accuracy_arr})
+plt.title('test')
 plt.plot('x', 'y', data=df, linestyle='', marker='o')
+plt.gca().set_xlim(left=0)
+plt.gca().set_ylim(bottom=0)
 plt.xlabel('Gaussian Blur Standard Deviation')
 plt.ylabel('Accuracy Percentage')
-plt.savefig('images/gauss-four-afht.jpg')
+plt.savefig('images/gauss_cifar10_acdt_graph.jpg')
