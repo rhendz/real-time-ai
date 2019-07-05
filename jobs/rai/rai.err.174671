@@ -1,7 +1,0 @@
-Using TensorFlow backend.
-predictcifar10.py:61: RuntimeWarning: Second argument 'y' is ambiguous: could be a color spec but is in data; using as data.  Either rename the entry in data or use three arguments to plot.
-  plt.plot('x', 'y', data=df, linestyle='', marker='o')
-Exception ignored in: <bound method BaseSession.__del__ of <tensorflow.python.client.session.Session object at 0x7fbaccf214a8>>
-Traceback (most recent call last):
-  File "/home/apatel79/cs494-rai/venv/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 702, in __del__
-TypeError: 'NoneType' object is not callable

@@ -1,6 +1,0 @@
-Using TensorFlow backend.
-Exception ignored in: <bound method BaseSession.__del__ of <tensorflow.python.client.session.Session object at 0x7f036d5a1cc0>>
-Traceback (most recent call last):
-  File "/home/apatel79/cs494-rai/venv/lib/python3.5/site-packages/tensorflow/python/client/session.py", line 702, in __del__
-  File "/home/apatel79/cs494-rai/venv/lib/python3.5/site-packages/tensorflow/python/framework/c_api_util.py", line 31, in __init__
-TypeError: 'NoneType' object is not callable
