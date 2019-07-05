@@ -1,0 +1,34 @@
+On yolov3, each prediction took around ~21-24 seconds.
+
+For dog, 
+dog: 100%
+truck: 92%
+bicycle: 99%
+
+For giraffe,
+giraffe: 98%
+zebra: 98%
+
+For horses,
+horse: 100%
+horse: 100%
+horse: 96%
+horse: 95%
+
+On yolov3-tiny, each prediction took around ~0.9-1.2 seconds.
+
+For dog,
+dog: 57%
+car: 52%
+truck: 56%
+car: 62%
+bicycle: 59%
+
+For giraffe,
+giraffe: 53%
+zebra: 53%
+
+For horses,
+cow: 56%
+cow: 54%
+horse: 56%
