@@ -1,6 +1,4 @@
-cifar/*/
 *.zip
 *.tar
 *.tar.gz
-!cifar/jobs
-!cifar/images
+cifar/jobs
